@@ -4,15 +4,15 @@ function fromApiResponseToJwt({ data }) {
     return data.token
   }
   
-  export function loginService({ user }) {
-    const { email, password, role } = user;
-    return new Fetch()
-      .setUrl('backoffice/login')
-      .setMethod('post')
-      .setData({ email, password, role })
-      .send()
-      .then(fromApiResponseToJwt);
-  }
+export function loginService({ user }) {
+  const { email, password, role } = user;
+  return new Fetch()
+    .setUrl('backoffice/login')
+    .setMethod('post')
+    .setData({ email, password, role })
+    .send()
+    .then(fromApiResponseToJwt);
+}
 
 export function create({ user }) {
   return new Fetch()
